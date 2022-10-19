@@ -8,14 +8,14 @@
 import UIKit
 
 public extension WaterfallTrueCompositionalLayout {
-    typealias ItemSizeProvider = (Int) -> CGSize
+    typealias ItemHeightProvider = (_ index: Int, _ itemWidth: CGFloat) -> CGFloat
     typealias ItemCountProvider = () -> Int
     
     struct Configuration {
         public let columnCount: Int
         public let interItemSpacing: CGFloat
         public let contentInsetsReference: UIContentInsetsReference
-        public let itemSizeProvider: ItemSizeProvider
+        public let itemHeightProvider: ItemHeightProvider
         public let itemCountProvider: ItemCountProvider
             
         public init(
@@ -23,13 +23,13 @@ public extension WaterfallTrueCompositionalLayout {
             interItemSpacing: CGFloat = 8,
             contentInsetsReference: UIContentInsetsReference = .automatic,
             itemCountProvider: @escaping ItemCountProvider,
-            itemSizeProvider: @escaping ItemSizeProvider
+            itemHeightProvider: @escaping ItemHeightProvider
         ) {
             self.columnCount = columnCount
             self.interItemSpacing = interItemSpacing
             self.contentInsetsReference = contentInsetsReference
             self.itemCountProvider = itemCountProvider
-            self.itemSizeProvider = itemSizeProvider
+            self.itemHeightProvider = itemHeightProvider
         }
     }
 }

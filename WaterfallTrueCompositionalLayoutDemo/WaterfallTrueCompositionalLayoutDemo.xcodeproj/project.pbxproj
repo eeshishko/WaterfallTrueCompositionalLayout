@@ -13,6 +13,10 @@
 		74A0E3E828CFAD7E0074911F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74A0E3E728CFAD7E0074911F /* Assets.xcassets */; };
 		74A0E3EB28CFAD7E0074911F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74A0E3E928CFAD7E0074911F /* LaunchScreen.storyboard */; };
 		74A0E3FC28CFAE920074911F /* WaterfallTrueCompositionalLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 74A0E3FB28CFAE920074911F /* WaterfallTrueCompositionalLayout */; };
+		74A0E40028D8A1480074911F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A0E3FF28D8A1480074911F /* ViewModel.swift */; };
+		74A0E40228D8A1D60074911F /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A0E40128D8A1D60074911F /* ItemModel.swift */; };
+		74A0E40428D8A28D0074911F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A0E40328D8A28D0074911F /* CollectionViewCell.swift */; };
+		74A0E40728D8A6BF0074911F /* UIMenu+Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A0E40628D8A6BF0074911F /* UIMenu+Picker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		74A0E3EA28CFAD7E0074911F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74A0E3EC28CFAD7E0074911F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74A0E3F928CFAE6D0074911F /* WaterfallTrueCompositionalLayout */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WaterfallTrueCompositionalLayout; path = ..; sourceTree = "<group>"; };
+		74A0E3FF28D8A1480074911F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		74A0E40128D8A1D60074911F /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		74A0E40328D8A28D0074911F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		74A0E40628D8A6BF0074911F /* UIMenu+Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIMenu+Picker.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +67,9 @@
 		74A0E3DD28CFAD7C0074911F /* WaterfallTrueCompositionalLayoutDemo */ = {
 			isa = PBXGroup;
 			children = (
+				74A0E40528D8A6A10074911F /* Supporting files */,
 				74A0E3FD28CFAEA30074911F /* Resources */,
-				74A0E3DE28CFAD7C0074911F /* AppDelegate.swift */,
-				74A0E3E028CFAD7C0074911F /* SceneDelegate.swift */,
-				74A0E3E228CFAD7C0074911F /* ViewController.swift */,
+				74A0E3FE28D8A0B50074911F /* Screen */,
 			);
 			path = WaterfallTrueCompositionalLayoutDemo;
 			sourceTree = "<group>";
@@ -90,6 +97,27 @@
 				74A0E3EC28CFAD7E0074911F /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		74A0E3FE28D8A0B50074911F /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				74A0E3E228CFAD7C0074911F /* ViewController.swift */,
+				74A0E3FF28D8A1480074911F /* ViewModel.swift */,
+				74A0E40128D8A1D60074911F /* ItemModel.swift */,
+				74A0E40328D8A28D0074911F /* CollectionViewCell.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		74A0E40528D8A6A10074911F /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				74A0E40628D8A6BF0074911F /* UIMenu+Picker.swift */,
+				74A0E3DE28CFAD7C0074911F /* AppDelegate.swift */,
+				74A0E3E028CFAD7C0074911F /* SceneDelegate.swift */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,8 +193,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A0E40228D8A1D60074911F /* ItemModel.swift in Sources */,
+				74A0E40728D8A6BF0074911F /* UIMenu+Picker.swift in Sources */,
 				74A0E3E328CFAD7C0074911F /* ViewController.swift in Sources */,
+				74A0E40428D8A28D0074911F /* CollectionViewCell.swift in Sources */,
 				74A0E3DF28CFAD7C0074911F /* AppDelegate.swift in Sources */,
+				74A0E40028D8A1480074911F /* ViewModel.swift in Sources */,
 				74A0E3E128CFAD7C0074911F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

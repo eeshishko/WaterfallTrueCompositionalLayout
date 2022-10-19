@@ -11,7 +11,7 @@ extension WaterfallTrueCompositionalLayout {
     final class LayoutBuilder {
         private var columnHeights: [CGFloat]
         private let columnCount: CGFloat
-        private let itemSizeProvider: ItemSizeProvider
+        private let itemHeightProvider: ItemHeightProvider
         private let interItemSpacing: CGFloat
         private let collectionWidth: CGFloat
         
@@ -21,7 +21,7 @@ extension WaterfallTrueCompositionalLayout {
         ) {
             self.columnHeights = [CGFloat](repeating: 0, count: configuration.columnCount)
             self.columnCount = CGFloat(configuration.columnCount)
-            self.itemSizeProvider = configuration.itemSizeProvider
+            self.itemHeightProvider = configuration.itemHeightProvider
             self.interItemSpacing = configuration.interItemSpacing
             self.collectionWidth = collectionWidth
         }
@@ -46,7 +46,7 @@ private extension WaterfallTrueCompositionalLayout.LayoutBuilder {
     
     func frame(for row: Int) -> CGRect {
         let width = columnWidth
-        let height = itemHeight(for: row, itemWidth: width)
+        let height = itemHeightProvider(row, width)
         let size = CGSize(width: width, height: height)
         let origin = itemOrigin(width: size.width)
         return CGRect(origin: origin, size: size)
@@ -56,13 +56,6 @@ private extension WaterfallTrueCompositionalLayout.LayoutBuilder {
         let y = columnHeights[columnIndex()].rounded()
         let x = (width + interItemSpacing) * CGFloat(columnIndex())
         return CGPoint(x: x, y: y)
-    }
-    
-    private func itemHeight(for row: Int, itemWidth: CGFloat) -> CGFloat {
-        let itemSize = itemSizeProvider(row)
-        let aspectRatio = itemSize.height / itemSize.width
-        let itemHeight = itemWidth * aspectRatio
-        return itemHeight.rounded()
     }
     
     private func columnIndex() -> Int {
