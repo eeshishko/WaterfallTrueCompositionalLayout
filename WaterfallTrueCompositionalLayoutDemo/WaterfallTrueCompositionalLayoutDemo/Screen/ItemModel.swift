@@ -11,7 +11,7 @@ import UIKit
 struct ItemModel: Hashable {
     let title: String
     let color = randomColor()
-    let height = CGFloat.random(in: 0...100)
+    let height = CGFloat.random(in: 30...100)
     
     private static func randomColor() -> UIColor {
         let hue = CGFloat(arc4random() % 256) / 256

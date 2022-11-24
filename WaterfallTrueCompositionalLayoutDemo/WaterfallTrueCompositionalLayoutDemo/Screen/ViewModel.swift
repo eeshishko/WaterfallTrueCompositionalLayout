@@ -17,6 +17,7 @@ final class ViewModel {
     ).map { [unowned self] _, _, _ in
         makeWaterfallLayoutConfiguration()
     }.eraseToAnyPublisher()
+    
     lazy var menu = Publishers.CombineLatest3(
         columnCountSubject,
         spacingSubject,
@@ -24,6 +25,7 @@ final class ViewModel {
     ).map { [unowned self] _, _, _ in
         makeMenu()
     }.eraseToAnyPublisher()
+    
     lazy var snapshot = itemsSubject.map { items -> NSDiffableDataSourceSnapshot<Int, ItemModel> in
         var snapshot = NSDiffableDataSourceSnapshot<Int, ItemModel>()
         snapshot.appendSections([0])
@@ -149,6 +151,6 @@ private extension ViewModel {
     }
     
     static func makeItems() -> [ItemModel] {
-        (0...999).map { .init(title: "Item \($0)")}
+        (0...500).map { .init(title: "Item \($0)")}
     }
 }

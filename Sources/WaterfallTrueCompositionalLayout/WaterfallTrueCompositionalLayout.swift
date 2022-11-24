@@ -1,6 +1,13 @@
 import UIKit
 
+/// Pinterest/waterfall like layout allows to have shifted items of different heights independently
 public final class WaterfallTrueCompositionalLayout {
+    /// Creates `NSCollectionLayoutSection` instance  for `WaterfallTrueCompositionalLayout`
+    /// - Parameters:
+    ///   - config: Parameters describing your desired layout
+    ///   - enviroment: environment which is accessible on provider closure for UICollectionView
+    ///   - sectionIndex: index of a section in certain UICollectionView
+    /// - Returns: Pinterest-like layout
     public static func makeLayoutSection(
         config: Configuration,
         enviroment: NSCollectionLayoutEnvironment,
@@ -11,7 +18,6 @@ public final class WaterfallTrueCompositionalLayout {
             configuration: config,
             collectionWidth: enviroment.container.contentSize.width
         )
-        
         for i in 0..<config.itemCountProvider() {
             let item = itemProvider.makeLayoutItem(for: i)
             items.append(item)

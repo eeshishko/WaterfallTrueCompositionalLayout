@@ -18,10 +18,6 @@ let package = Package(
     targets: [
         .target(
             name: "WaterfallTrueCompositionalLayout",
-            dependencies: []),
-        .testTarget(
-            name: "WaterfallTrueCompositionalLayoutTests",
-            dependencies: ["WaterfallTrueCompositionalLayout"]
-        ),
+            dependencies: [])
     ]
 )

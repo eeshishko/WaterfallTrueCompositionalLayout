@@ -17,7 +17,14 @@ public extension WaterfallTrueCompositionalLayout {
         public let contentInsetsReference: UIContentInsetsReference
         public let itemHeightProvider: ItemHeightProvider
         public let itemCountProvider: ItemCountProvider
-            
+        
+        /// Initialization for configuration of waterfall compositional layout section
+        /// - Parameters:
+        ///   - columnCount: a number of columns
+        ///   - interItemSpacing: a spacing between columns and rows
+        ///   - contentInsetsReference: a reference point for content insets for a section
+        ///   - itemCountProvider: closure providing a number of items in a section
+        ///   - itemHeightProvider: closure for providing an item height at a specific index
         public init(
             columnCount: Int = 2,
             interItemSpacing: CGFloat = 8,
