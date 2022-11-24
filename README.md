@@ -34,7 +34,7 @@ let configuration = WaterfallTrueCompositionalLayout.Configuration(
 )
  ```
 
-Then pass it along with enviroment and section index, which are available through UICollectionViewCompositionalLayout initializater:
+Then pass it along with enviroment and section index, which are available through ```UICollectionViewCompositionalLayout``` initializater:
 
 ```swift
 let layout = UICollectionViewCompositionalLayout { sectionIndex, enviroment in
