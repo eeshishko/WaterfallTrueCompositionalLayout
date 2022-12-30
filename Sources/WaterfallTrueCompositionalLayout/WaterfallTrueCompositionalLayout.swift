@@ -5,18 +5,18 @@ public final class WaterfallTrueCompositionalLayout {
     /// Creates `NSCollectionLayoutSection` instance  for `WaterfallTrueCompositionalLayout`
     /// - Parameters:
     ///   - config: Parameters describing your desired layout
-    ///   - enviroment: environment which is accessible on provider closure for UICollectionView
+    ///   - environment: environment which is accessible on provider closure for UICollectionView
     ///   - sectionIndex: index of a section in certain UICollectionView
     /// - Returns: Pinterest-like layout
     public static func makeLayoutSection(
         config: Configuration,
-        enviroment: NSCollectionLayoutEnvironment,
+        environment: NSCollectionLayoutEnvironment,
         sectionIndex: Int
     ) -> NSCollectionLayoutSection {
         var items = [NSCollectionLayoutGroupCustomItem]()
         let itemProvider = LayoutBuilder(
             configuration: config,
-            collectionWidth: enviroment.container.contentSize.width
+            collectionWidth: environment.container.contentSize.width
         )
         for i in 0..<config.itemCountProvider() {
             let item = itemProvider.makeLayoutItem(for: i)
